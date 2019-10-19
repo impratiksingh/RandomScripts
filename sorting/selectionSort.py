@@ -1,21 +1,16 @@
+#selection sorting
+import sys
+A = [6, 2, 1, 3, 4]
+for i in range(len(A)):
+	
+	min_index = i
+	for j in range(i+1, len(A)):
+		if A[min_index] > A[j]:
+			min_index = j
+			 
+	A[i], A[min_index] = A[min_index], A[i]
 
-# coding: utf-8
-
-# In[50]:
-
-
-alist = [54,26,93,17,77,31,44,55,20]
-def selectionSort(alist):
-    for fillslot in range(len(alist)-1,0,-1):
-       positionOfMax=0
-       for location in range(1,fillslot+1):
-            if alist[location]>alist[positionOfMax]:
-                positionOfMax = location
-
-       temp = alist[fillslot]
-       alist[fillslot] = alist[positionOfMax]
-       alist[positionOfMax] = temp
-    return alist
-
-print(selectionSort(alist))
+print ("Sorted array")
+for i in range(len(A)):
+	print("%d" %A[i])
 
